@@ -1,0 +1,52 @@
+.main__container{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 32px;
+}
+
+.main__container h1{
+  margin-bottom: 32px;
+  font-size: 3rem;
+}
+
+.main__container__course{
+  width: 100%;
+  margin: 16px 0;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid;
+  border-radius: 6px;
+}
+
+.main__container__course button{
+  padding: 8px 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .main__container{
+    padding: 16px 24px;
+  }
+
+  .main__container h1{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main__container{
+    padding: 16px;
+  }
+
+  .main__container h1{
+    font-size: 2rem;
+  }
+
+  .main__container__course{
+    padding: 24px 16px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}

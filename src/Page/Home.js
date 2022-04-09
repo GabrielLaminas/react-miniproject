@@ -1,8 +1,8 @@
 import React from 'react';
+import './homeStyle.css';
 
 const Home = () => {
   const [data, setData] = React.useState([]);
-  const [path, setPath] = React.useState([]);
 
   React.useEffect(() => {
     async function data(){
@@ -24,32 +24,31 @@ const Home = () => {
         curso
       })
     })
-    .then(response => response.json())
-    .then(json => setPath(json))
+    .then(response => response.blob())
+    .then(pdfBlob => {
+      const blobUrl = URL.createObjectURL(pdfBlob);
+      window.open(blobUrl, "_blank", "scrollbars=yes, resizable=yes, top=100, left=500, width=500, height=500");
+    })
     .catch(erro => console.error(erro))
   }
   
   return (
-    <div>
+    <main className='main__container'>
       <h1>CERTIFICADOS</h1>
-      {data.map(({id, curso, name}) => (
+      {data.map(({id, curso}) => (
         <div
-          onClick={() => handleClick(id, curso)} 
-          style={{
-            border: '2px solid',
-            width: '500px',
-            padding: '16px',
-            cursor: 'pointer'
-          }}
+          className='main__container__course'
           key={id}>
-          <h3>{curso}</h3>
+          <h2>{curso}</h2>
+          <button 
+            onClick={() => handleClick(id, curso)}
+          >
+            Download
+          </button>
         </div>
       ))}
-      
-      <hr/>
-      <p>{ path && path.filename }</p>
-    </div>
+    </main>
   )
 }
 
-export default Home
+export default Home;
