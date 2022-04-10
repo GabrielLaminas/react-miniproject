@@ -1,22 +1,22 @@
-.main__container{
+.main__validation{
   max-width: 960px;
   margin: 0 auto;
   padding: 16px 32px;
 }
 
-.main__container header{
+.main__validation header{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
-.main__container h1{
-  margin-bottom: 32px;
+.main__validation h1{
+  margin-bottom: 30px;
   font-size: 3rem;
 }
 
-.main__container a{
+.main__validation a{
   margin-bottom: 20px;
   padding: 8px 16px;
   display: inline-block;
@@ -27,40 +27,39 @@
   cursor: pointer;
 }
 
-.main__container__course{
-  width: 100%;
-  margin: 16px 0;
-  padding: 24px;
+.main__validation form{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 2px solid;
-  border-radius: 6px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.main__container__course button{
-  padding: 8px 24px;
+.main__validation label{
+  margin: 20px 0 40px 0;
+}
+
+.main__validation form button{
+  padding: 10px 16px;
+  background-color: forestgreen;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  border-radius: 4px;
+  border: none;
   cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
-  .main__container{
+  .main__validation{
     padding: 16px 24px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .main__container{
+  .main__validation{
     padding: 16px;
   }
 
-  .main__container h1{
+  .main__validation h1{
     font-size: 2rem;
-  }
-
-  .main__container__course{
-    padding: 24px 16px;
-    flex-wrap: wrap;
-    gap: 16px;
   }
 }

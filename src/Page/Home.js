@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './homeStyle.css';
 
 const Home = () => {
@@ -34,7 +35,11 @@ const Home = () => {
   
   return (
     <main className='main__container'>
-      <h1>CERTIFICADOS</h1>
+      <header>
+        <h1>CERTIFICADOS</h1>
+        <Link to="/validation">Validar PDF</Link>
+      </header>
+
       {data.map(({id, curso}) => (
         <div
           className='main__container__course'
