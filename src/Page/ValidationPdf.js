@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import './validationpdf.css';
 
 const ValidationPdf = () => {
-  
+  const [pdf, setPdf] = React.useState(null);
+
   function handleOnChange(e){
-    console.log(e.target.files[0])
+    setPdf(e.target.files[0]);
   }
 
   function handleSendPdf(e){
@@ -29,7 +30,14 @@ const ValidationPdf = () => {
           />
         </label>
 
-        <button onClick={handleSendPdf}>
+        <button 
+          onClick={handleSendPdf}
+          style={
+            pdf 
+              ? {opacity: 1, cursor: 'pointer'} 
+              : {opacity: .5, pointerEvents: 'none'}
+          }
+        >
           Validar
         </button>
       </form>
