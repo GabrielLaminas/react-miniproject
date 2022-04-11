@@ -15,6 +15,10 @@ const Home = () => {
   }, []);
 
   function handleClick(id, curso){
+    const date = new Date();
+    const timestamp = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+    const dataEmissao = date.toLocaleDateString();
+
     fetch('http://localhost:5000/certificado', {
       method: 'POST',
       headers: {
@@ -22,7 +26,9 @@ const Home = () => {
       },
       body: JSON.stringify({
         id,
-        curso
+        curso,
+        timestamp,
+        dataEmissao
       })
     })
     .then(response => response.blob())
