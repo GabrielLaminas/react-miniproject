@@ -11,6 +11,16 @@ const ValidationPdf = () => {
 
   function handleSendPdf(e){
     e.preventDefault();
+    const dataForm = new FormData();
+    dataForm.append('pdf', pdf);
+
+    fetch('http://localhost:5000/validacao', {
+      method: 'POST',
+      body: dataForm
+    })
+    .then(response => response.json())
+    .then(result => console.log(result))
+    .catch(error => console.log(error))
   }
 
   return (
@@ -21,16 +31,17 @@ const ValidationPdf = () => {
       </header>
 
       <form>
-        <label htmlFor='filepdf'>
+        <label>
           <input 
             type="file"
-            id='filepdf'
+            //id='filepdf'
+            //name='filepdf'
             accept='.pdf'
             onChange={handleOnChange}
           />
         </label>
 
-        <button 
+        <button
           onClick={handleSendPdf}
           style={
             pdf 
