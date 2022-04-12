@@ -31,11 +31,10 @@ const ValidationPdf = () => {
       </header>
 
       <form>
-        <label>
+        <label htmlFor='filepdf'>
           <input 
             type="file"
-            //id='filepdf'
-            //name='filepdf'
+            id='filepdf'
             accept='.pdf'
             onChange={handleOnChange}
           />
