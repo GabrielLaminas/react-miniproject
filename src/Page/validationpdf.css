@@ -38,6 +38,7 @@
 }
 
 .main__validation form button{
+  margin-bottom: 20px;
   padding: 10px 16px;
   background-color: forestgreen;
   color: white;
@@ -61,5 +62,8 @@
 
   .main__validation h1{
     font-size: 2rem;
+  }
+  .main__validation form button{
+    width: 100%;
   }
 }

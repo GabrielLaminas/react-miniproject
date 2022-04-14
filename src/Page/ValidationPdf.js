@@ -4,6 +4,7 @@ import './validationpdf.css';
 
 const ValidationPdf = () => {
   const [pdf, setPdf] = React.useState(null);
+  const [resultado, setResultado] = React.useState({});
 
   function handleOnChange(e){
     setPdf(e.target.files[0]);
@@ -19,7 +20,7 @@ const ValidationPdf = () => {
       body: dataForm
     })
     .then(response => response.json())
-    .then(result => console.log(result))
+    .then(result => setResultado(result))
     .catch(error => console.log(error))
   }
 
@@ -39,7 +40,6 @@ const ValidationPdf = () => {
             onChange={handleOnChange}
           />
         </label>
-
         <button
           onClick={handleSendPdf}
           style={
@@ -51,6 +51,24 @@ const ValidationPdf = () => {
           Validar
         </button>
       </form>
+      {resultado.tipo === 'error' 
+        ? (<p 
+            style={{
+              color: 'red', 
+              fontSize: '1.125rem'
+            }}
+          >
+            {resultado.mensagem}
+          </p>)
+        : (<p 
+          style={{
+            color: 'forestgreen', 
+            fontSize: '1.125rem'
+          }}
+          >
+            {resultado.mensagem}
+          </p>)
+      }
     </main>
   )
 }
