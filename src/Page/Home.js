@@ -21,10 +21,10 @@ const Home = () => {
 
     fetch('https://mini-project-api.vercel.app/certificado', {
       method: 'POST',
+      mode: 'same-origin',
       headers: {
         "Content-type": "application/json; charset=UTF-8",
         "Accept": "application/json",
-        "Origin": "https://react-miniproject.vercel.app/"
       },
       body: JSON.stringify({
         id,
