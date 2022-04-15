@@ -7,7 +7,7 @@ const Home = () => {
 
   React.useEffect(() => {
     async function data(){
-      const response = await fetch('http://localhost:5000/certificado');
+      const response = await fetch('https://mini-project-api.vercel.app/certificado');
       const json = await response.json();
       setData(json)
     }
@@ -19,7 +19,7 @@ const Home = () => {
     const timestamp = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
     const dataEmissao = date.toLocaleDateString();
 
-    fetch('http://localhost:5000/certificado', {
+    fetch('https://mini-project-api.vercel.app/certificado', {
       method: 'POST',
       headers: {
         "Content-type": "application/json; charset=UTF-8"

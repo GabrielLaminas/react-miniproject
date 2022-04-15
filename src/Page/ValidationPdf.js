@@ -15,7 +15,7 @@ const ValidationPdf = () => {
     const dataForm = new FormData();
     dataForm.append('pdf', pdf);
 
-    fetch('http://localhost:5000/validacao', {
+    fetch('https://mini-project-api.vercel.app/validacao', {
       method: 'POST',
       body: dataForm
     })
