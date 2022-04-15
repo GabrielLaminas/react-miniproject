@@ -7,7 +7,7 @@ const Home = () => {
 
   React.useEffect(() => {
     async function data(){
-      const response = await fetch('https://mini-project-api.vercel.app/certificado');
+      const response = await fetch('https://mini-project-api.vercel.app/listagem');
       const json = await response.json();
       setData(json)
     }
