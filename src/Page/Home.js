@@ -21,7 +21,7 @@ const Home = () => {
 
     fetch('https://mini-project-api.vercel.app/certificado', {
       method: 'POST',
-      mode: 'no-cors',
+      mode: 'cors',
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
