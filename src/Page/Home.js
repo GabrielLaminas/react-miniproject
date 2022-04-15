@@ -19,11 +19,10 @@ const Home = () => {
     const timestamp = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
     const dataEmissao = date.toLocaleDateString();
 
-    fetch('https://mini-project-api.vercel.app/certificado', {
+    fetch('https://mini-project-api.vercel.app/certificado/', {
       method: 'POST',
       headers: {
-        "Content-type": "application/json; charset=UTF-8",
-        "Accept": "application/json",
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
       body: JSON.stringify({
         id,
