@@ -21,8 +21,9 @@ const Home = () => {
 
     fetch('https://mini-project-api.vercel.app/download', {
       method: 'POST',
+      mode: 'no-cors',
       headers: {
-        "Content-type": "application/json; charset=UTF-8"
+        "Content-type": "application/json; charset=UTF-8",
       },
       body: JSON.stringify({
         id,
